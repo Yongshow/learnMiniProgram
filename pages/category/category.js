@@ -1,4 +1,4 @@
-// pages/home/home.js
+// pages/category/category.js
 Page({
 
     /**
@@ -62,9 +62,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-    handlerGetUserInfo:function (event) {
-        console.log(event)
     }
-
 })
