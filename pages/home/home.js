@@ -5,7 +5,15 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        name:"Yong",
+        age:18,
+        student:[
+            {id:110,name:"张三",age:30},
+            {id:111,name:"李四",age:30},
+            {id:112,name:"王五",age:30},
+            {id:113,name:"杜六",age:30},
+        ],
+        counter:0
     },
 
     /**
@@ -62,5 +70,23 @@ Page({
      */
     onShareAppMessage: function () {
 
+    },
+    /**
+     * "+"点击事件
+     */
+    handleBtnClick1:function(){
+        //1.错误做法
+        //this.data.counter++
+        //console.log(this.data.counter)
+
+        //2.正确操作
+        this.setData({
+            counter:this.data.counter + 1
+        })
+    },
+    handleBtnClick2:function(){
+        this.setData({
+            counter:this.data.counter - 1
+        })
     }
 })
