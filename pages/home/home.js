@@ -1,4 +1,5 @@
 // pages/home/home.js
+//注册一个页面
 Page({
 
     /**
@@ -12,7 +13,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        
     },
 
     /**
@@ -63,6 +64,11 @@ Page({
     onShareAppMessage: function () {
 
     },
+
+    onPageScroll(obj){
+        console.log(obj)
+    },
+
     handlerGetUserInfo:function (event) {
         console.log(event)
     }

@@ -6,3 +6,4 @@
         bindgetuserinfo="handlerGetUserInfo">获取授权</button>
 
 <open-data type="userNickName"></open-data>
+<open-data type="userAvatarUrl"></open-data>
