@@ -1,0 +1,23 @@
+<!--pages/image/image.wxml-->
+<!-- 1.image的基本属性 -->
+<image/>
+
+<!-- 2.src属性 -->
+<image src="/assets/img09.jpeg"/>
+<image src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>
+
+<!-- 补充 -->
+<button bindtap="handleChooseAlbum">选中图片</button>
+<image src="{{imagePath}}"></image>
+
+<!-- 3.lazy-load,bindload属性 -->
+<image  wx:for="{{10}}"
+        src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"
+        bindload="handleImageLoad"
+        lazy-load/>
+
+<!-- 4.show-menu-by-longpress：长按图片出现识别 -->
+<image show-menu-by-longpress="1" lazy-load="1" 
+        src="https://res.wx.qq.com/wxdoc/dist/assets/img/0.4cb08bb4.jpg"/>
+
+<!-- 5.mode属性：缩放 -->

@@ -1,0 +1,27 @@
+/* pages/view/view.wxss */
+.box{
+    background: red;
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background: purple;
+    color: white;
+}
+
+.pressed1{
+    background: orange;
+    font-size: 30px;
+
+}
+
+.box2{
+    width: 200px;
+    height: 200px;
+    background: blue;
+}
+
+.pressed2{
+    background: yellow;
+}

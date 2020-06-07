@@ -1,0 +1,21 @@
+<!--pages/input/input.wxml-->
+<!-- 1.input的基本使用 -->
+<input />
+
+<!-- 2.value:input的默认值 -->
+<input value="哈哈哈"/>
+
+<!-- 3.type:决定键盘类型 -->
+<input type="number"></input>
+
+<!-- 4.passward:暗文属性 -->
+<input password="1"></input>
+
+<!-- 5.placeholder:占位、提示 -->
+<input placeholder="请输入内容"></input>
+
+<!-- 6.input绑定事件 -->
+<input bindinput="handleInput"
+        bindfocus="handleFocus"
+        bindblur="handlerBlur"
+        bindconfirm="handlerConfirm"></input>

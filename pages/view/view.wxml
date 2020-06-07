@@ -1,0 +1,17 @@
+<!--pages/view/view.wxml-->
+<!-- 1.view的基本使用 -->
+<view class="box">哈哈哈</view>
+<view>呵呵呵</view>
+
+<!-- 2.hover-class属性：按下时显示样式 -->
+<view class="box1"
+hover-start-time="50"
+    hover-stay-time="50"
+    hover-class="pressed1">哈哈哈</view>
+
+<view>啦啦啦</view>
+
+<!-- 3.hover-stop-propagation -->
+<view class="box2" hover-class="pressed2">
+    <view class="box1" hover-class="pressed1" hover-stop-propagation>哈哈哈</view>
+</view>
