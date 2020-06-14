@@ -1,0 +1,12 @@
+// 2.2定义在单独的wxs文件中,再使用wxs标签导入
+
+var message = "Hello World";
+var name = "Yong";
+var sum = function (num1, num2) {
+    return num1 + num2;
+}
+module.exports = {
+    message: message,
+    name: name,
+    sum: sum
+}

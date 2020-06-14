@@ -1,0 +1,29 @@
+<!--pages/wxs/wxs.wxml-->
+<!-- wxml调用函数 -->
+<!-- 1.错误用法 -->
+<!-- <view>{{25.666666.ToFixed(2)}}</view> -->
+<!-- <view>{{numToFixed(25.66666)}}</view> -->
+<!-- 2.1直接在wxml中写wxs代码 -->
+<!-- <wxs module="info">
+    var message = "Hello World";
+    var name = "Yong";
+    var sum = function(num1, num2){
+        return num1 + num2;
+    }
+    module.exports = {
+        message:message,
+        name:name,
+        sum:sum
+    }
+</wxs> -->
+<!-- 2.wxs单独定义再引用 -->
+<wxs module="info" src="../../wxs/info.wxs"/>
+<view>{{info.message}}</view>
+<view>{{info.name}}</view>
+<view>{{info.sum(20,30)}}</view>
+
+<!-- 3.wxs的应用 -->
+<wxs src="../../wxs/format.wxs" module="format"/>
+<view>{{format.priceFormat(price,3)}}</view>
+<view>{{format.dateFormat(time, "yyyy/MM/dd hh:mm:ss")}}</view>
+<view>{{nowTime}}</view>

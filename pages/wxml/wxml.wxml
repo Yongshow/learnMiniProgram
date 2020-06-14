@@ -1,0 +1,69 @@
+<!--pages/wxml/wxml.wxml-->
+<!-- 1.wxml的格式 -->
+<!-- <view></view>
+<image/>
+<input/> -->
+<!-- <view class="" Class=""></view> -->
+<!-- 2.Mustache -->
+<view>{{message}}</view>
+<view>{{firstname}} {{lastname}}</view>
+<view>{{firstname + " " + lastname}}</view>
+<view>{{age >= 18 ? "成年人" : "未成年人"}}</view>
+<view>{{nowTime}}</view>
+<button size="mini" bindtap="handleSwitchColor">切换颜色</button>
+<view class="box {{isActive ? 'active' : ''}}">哈哈哈</view>
+
+<view>------------条件判断-------------</view>
+<!-- wx:if的使用 -->
+<button size="mini" bindtap="handleSwitchShow">{{isShow ? "隐藏" : "显示"}}</button>
+<view wx:if="{{isShow}}">哈哈哈哈</view>
+<!-- wx:elif/wx:else的使用 -->
+<button size="mini" bindtap="handleIncrement">分数递增6</button>
+<view wx:if="{{score>=90}}">优秀</view>
+<view wx:elif="{{score >= 80}}">良好</view>
+<view wx:elif="{{score >= 60}}">及格</view>
+<view wx:else>不及格</view>
+
+<!-- hidden属性 hidden隐藏时仍会渲染-->
+<view hidden>啦啦啦</view>
+<!-- 显示和隐藏切换频率高时用hidden,
+    显示和隐藏切换频率低时用wx:if -->
+
+<view>-------------列表渲染-------------</view>
+<!-- wx:for -->
+<view wx:for="{{['abc','bcd','nab']}}">{{item + ":" + index}}</view>
+<view wx:for="code">{{index + ":" + item}}</view>
+<view wx:for="{{9}}">{{item}}</view>
+
+<!-- block标签 -->
+<block wx:for="{{3}}">
+    <button >按钮</button>
+    <view>呵呵呵呵</view>
+    <text>我是内容</text>
+</block>
+<!-- item、index重命名 -->
+<view wx:for="{{movies}}" wx:for-item="movie" wx:for-index="i">{{movie}} {{i}}</view>
+<block wx:for="{{nums}}" wx:for-item="out_nums">
+    <block wx:for="{{out_nums}}" wx:for-item="in_nums">
+        <view>{{in_nums}}</view>
+    </block>
+</block>
+<!-- key的作用 -->
+<view wx:for="abc" wx:key="*this">{{item}}</view>
+<!-- template -->
+<!-- 模板中的内容没有调用不会渲染 -->
+<template name="contentItem">
+    <button size="mini">{{btnText}}</button>
+    <view>{{content}}</view>
+</template>
+
+<template is="contentItem" data="{{btnText:'按钮',content:'哈哈哈'}}"></template>
+
+<!-- 
+    import导入：
+    1.主要是template导入
+    2.不能嵌套导入
+    include导入：
+    1.导入除了template/wxs外的内容
+    2.可以嵌套导入
+ -->

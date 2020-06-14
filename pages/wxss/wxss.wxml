@@ -1,0 +1,12 @@
+<!--pages/wxss/wxss.wxml-->
+<!--1.设置样式的三种方式-->
+<!-- 1.1行内样式 -->
+<view style="color:red; font-size:32px;">哈哈哈</view>
+<!-- 1.2页内样式 -->
+<view class="box">呵呵呵</view>
+<!-- 1.3全局样式 -->
+<view class="container">嘿嘿嘿</view>
+<!-- 优先级：行内>页内>全局 -->
+<!-- 2.wxss的单位：rpx -->
+<view class="box1">啦啦啦</view>
+<view class="box2">啦啦啦</view>
