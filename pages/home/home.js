@@ -1,66 +1,56 @@
 // pages/home/home.js
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
 
     },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
+    handleShowToast(){
+        wx.showToast({
+          title: '加载中...',
+          duration: 3000,
+          icon: 'loading',
+          mask: true
+        })
     },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
+    handleShowModal(){
+        wx.showModal({
+          title: '啦啦啦',
+          content: '哈哈哈',
+          cancelText: '退出',
+          success: function(res){
+              console.log(res)
+              if (res.confirm) {
+                console.log('用户点击了确定')
+              }
+              if(res.cancel){
+                  console.log('用户点击了取消')
+              }
+          }
+        })
     },
+    handleShowLoading(){
+        wx.showLoading({
+          title: '加载中...',
+          mask: true,
+        })
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
+        setTimeout(() => {
+            wx.hideLoading()
+        }, 1000);
+    }  ,
+    handleShowActionSheet(){
+        wx.showActionSheet({
+          itemList: ['相册','拍照'],
+          itemColor: 'red',
+          success: function(res){
+            console.log(res)
+          }
+        })
+    } ,
+    onShareAppMessage(){
+        return{
+            title:'你好鸭',
+            path: 'pages/about/about',
+            imageUrl: 'https://tse2-mm.cn.bing.net/th/id/OIP.nKeAU-E5_dhMJiaQo909CQHaEo?pid=Api&rs=1'
+        }
     }
 })
