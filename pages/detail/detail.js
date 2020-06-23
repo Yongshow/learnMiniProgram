@@ -1,18 +1,28 @@
-// pages/home/home.js
+// pages/detail/detail.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        title:'哈哈哈'
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.log(options)
+    },
+    onUnload(){
+        // 不可用
+        // // 1.获取首页的页面对象
+        // const pages = getCurrentPages()
+        // const home = pages[pages.length - 2]
+        // // 2.调用页面对象的setData
+        // home.setData({
+        //     title:'呵呵呵'
+        // })
     },
 
     /**
@@ -33,7 +43,7 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+        
     },
 
     /**
@@ -63,9 +73,9 @@ Page({
     onShareAppMessage: function () {
 
     },
-    handlePushDetail(){
-        wx.navigateTo({
-          url: '/pages/detail/detail?title=你好啊',
+    handleBackHome(){
+        wx.navigateBack({
+            delta:1
         })
     }
 })
